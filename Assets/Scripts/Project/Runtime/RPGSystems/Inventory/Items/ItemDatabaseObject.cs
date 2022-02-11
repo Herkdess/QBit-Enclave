@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Base;
 using Sirenix.OdinInspector;
@@ -12,7 +13,10 @@ namespace RPGSystems {
         public Dictionary<int, ItemObject> GetItem;
 
         private int[] ids;
-        private ItemObject[] itemObjects;
+
+        private void Awake() {
+            AutoSetup();
+        }
 
         public void Initialize() {
             load();

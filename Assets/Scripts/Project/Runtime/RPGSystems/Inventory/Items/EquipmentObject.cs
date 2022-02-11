@@ -21,8 +21,5 @@ namespace RPGSystems {
         [TabGroup("Stats")]
         public List<ItemAttributeQualities> ItemAttributeQualitiesList;
         
-        private void Awake() {
-            type = ItemType.Armor;
-        }
     }
 }

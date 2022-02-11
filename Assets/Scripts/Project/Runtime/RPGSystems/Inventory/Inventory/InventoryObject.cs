@@ -15,7 +15,14 @@ namespace RPGSystems {
     public class InventoryObject : SerializedScriptableObject {
 
         public ItemDatabaseObject DatabaseObject;
+        public Action<ItemObject> OnItemEquipped;
+        public Action<ItemObject> OnItemUnequipped;
         public Inventory Container;
+        
+        public void Initialize() {
+            load();
+            
+        }
 
         public void AddItem(Item _item, int _amount) {
             if (!_item.Stackable) {
@@ -97,6 +104,9 @@ namespace RPGSystems {
     [Serializable]
     public class Inventory {
         public InventorySlot[] Items = new InventorySlot[24];
+        public void Initialize() {
+
+        }
         public void Clear() {
             for (int i = 0; i < Items.Length; i++) {
                 Items[i].UpdateSlot(-1, new Item(), 0);
@@ -110,11 +120,15 @@ namespace RPGSystems {
         public UserInterface parent;
         public Item Item;
         public int Amount;
-
+        
         public InventorySlot() {
             Item = new Item();
             Amount = 0;
             parent = null;
+        }
+
+        public void Initialize() {
+            
         }
 
         public void UpdateSlot(int _id, Item _item, int _amount) {
