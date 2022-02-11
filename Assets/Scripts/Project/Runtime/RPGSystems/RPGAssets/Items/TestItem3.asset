@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b83e08d9b2664f838e99bb3c92ec7c9a, type: 3}
+  m_Name: TestItem3
+  m_EditorClassIdentifier: 
+  item:
+    ItemIcon: {fileID: 0}
+    ItemName: testitem3
+    Description: 
+    Stackable: 0
+    slotType: 0
+    Requirements:
+    - Value:
+        BaseValue: 0
+    - Value:
+        BaseValue: 0
+    - Value:
+        BaseValue: 0
+    - Value:
+        BaseValue: 0
+    - Value:
+        BaseValue: 0
+    - Value:
+        BaseValue: 0
+    ItemStatQualitiesList:
+    - type: 2
+      value:
+        CalculationOrder: 100
+        _value: 10
+        Type: 100
+        Parent:
+          BaseValue: 0
+    ItemAttributeQualitiesList:
+    - type: 0
+      value:
+        CalculationOrder: 100
+        _value: 300
+        Type: 100
+        Parent:
+          BaseValue: 0
+  _inventorySlot:
+    type: 5
+    itemObject: {fileID: 0}
+  Equipped: 0

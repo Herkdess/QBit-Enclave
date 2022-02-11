@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1169e1990d6245828901a31f82a51b08, type: 3}
+  m_Name: PlayerEquipment
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  inventoryObject:
+    type: 1
+    inventorySlots:
+    - type: 0
+      itemObject: {fileID: 0}
+    - type: 1
+      itemObject: {fileID: 0}
+    - type: 2
+      itemObject: {fileID: 0}
+    - type: 3
+      itemObject: {fileID: 11400000, guid: 499102a9ee01714468baa6bbe34604c6, type: 2}
+    - type: 4
+      itemObject: {fileID: 0}
+  SaveInfo:
+    obj: {fileID: 11400000}
+    foldername: RPGSystem/Saves/Inventory/Modified
+    filename: PlayerEquipment
