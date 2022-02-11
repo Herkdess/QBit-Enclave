@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f036aec38b47f388025a7cde95da15, type: 3}
+  m_Name: Fish
+  m_EditorClassIdentifier: 
+  UIDisplay: {fileID: 7482667652216324306, guid: de7f5014e4ed48d43b68f6304653fe7c, type: 3}
+  type: 0
+  description: A Fresh Fish
+  Stackable: 1
+  item:
+    ID: -1
+    ItemName: Fish
+    Stackable: 1
+  RestoreHealthValue: 0
