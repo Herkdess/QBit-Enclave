@@ -5,17 +5,23 @@ using Sirenix.OdinInspector;
 namespace Base {
     [Serializable]
     public class B_Bridge {
+        
         #region Managers
 
         [TabGroup("Game Manager")]
+        [HideLabel]
         public GameManagerFunctions gameManagerFunctions;
         [TabGroup("UI Manager")]
+        [HideLabel]
         public UIManagerFunctions UIManager;
         [TabGroup("Level Manager")]
+        [HideLabel]
         public LevelManagerFunctions levelManagerFunctions;
         [TabGroup("Coroutine Manager")]
+        [HideLabel]
         public CoroutineRunnerFunctions coroutineRunnerFunctions;
         [TabGroup("Camera Manager")]
+        [HideLabel]
         public CameraFunctions CameraFunctions;
         #endregion
 

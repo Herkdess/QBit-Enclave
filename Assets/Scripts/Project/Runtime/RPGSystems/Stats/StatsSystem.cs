@@ -40,7 +40,7 @@ namespace RPGSystems {
             this.Item = item;
         }
 
-        public void ChangeBaseValue(float to) {
+        public void ChangeBaseValue(float to) { 
             Value.BaseValue = to;
         }
 

@@ -5,6 +5,7 @@ using Base.UI;
 using DG.Tweening;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using UnityEngine.Events;
 #if UNITY_EDITOR
 #endif
 #if UNITY_IOS
@@ -18,6 +19,7 @@ namespace Base {
         #region Properties
         
         [TabGroup("Master", "Bridge")]
+        [HideLabel]
         public B_Bridge Bridge;
 
         [TabGroup("Master", "Game Aspect Control")]
@@ -32,6 +34,8 @@ namespace Base {
         /// </summary>
         [TabGroup("Master", "Game Aspect Control")]
         [SerializeField] private int TargetFrameRate = 60;
+        [TabGroup("Master", "Game Aspect Control")]
+        public List<UnityEvent> StartEvents = new List<UnityEvent>();
         
         #endregion
         
@@ -91,6 +95,10 @@ namespace Base {
             Application.targetFrameRate = TargetFrameRate;
             
             B_LevelControl.LoadLevel(Enum_MainSave.PlayerLevel.ToInt());
+
+            for (int i = 0; i < StartEvents.Count; i++) {
+                B_CES_CentralEventSystem.BTN_OnStartPressed.AddFunction(StartEvents[i].Invoke, true);
+            }
             
         }
         private void OnApplicationQuit() {

@@ -12,7 +12,7 @@ using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 namespace Base {
-    public static class B_ExtentionFunctions {
+    public static class ExtentionFunctions {
 
         #region Transform Extentions
 
@@ -93,6 +93,8 @@ namespace Base {
             }
             return bounds.center;
         }
+        
+
 
         #endregion Vector3 Extentions
 

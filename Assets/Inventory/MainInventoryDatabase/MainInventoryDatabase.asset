@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573e9748875a7bb458e9b588519ef0e5, type: 3}
+  m_Name: MainInventoryDatabase
+  m_EditorClassIdentifier: 
+  m_ItemCategories:
+  - {fileID: 11400000, guid: a2364a7b11a1eec4c8f1c7cc9164bfa5, type: 2}
+  - {fileID: 11400000, guid: 95f432b20a84b5e4587801d559d45724, type: 2}
+  - {fileID: 11400000, guid: 5a333378cb0142f41823e758a10b5f89, type: 2}
+  - {fileID: 11400000, guid: 922ea104aaeb5dc4eb691c0da61acd49, type: 2}
+  - {fileID: 11400000, guid: 3e79e57d4147d7e458e9b5b9f56cfedc, type: 2}
+  - {fileID: 11400000, guid: a10654ee167e77b49b7f9e55fd62a3a8, type: 2}
+  - {fileID: 11400000, guid: 5632ac14f644ff447a76e0eb01c7f292, type: 2}
+  - {fileID: 11400000, guid: 2fc9a824cd043b84f8f5c11ade555e9d, type: 2}
+  - {fileID: 11400000, guid: 3e17f9523a0cbd24195a536df2e587b3, type: 2}
+  - {fileID: 11400000, guid: 698ddc3b8e551df4e92bb16e3aa0db79, type: 2}
+  - {fileID: 11400000, guid: 3cfc178de3ec87c41903f7965160e434, type: 2}
+  - {fileID: 11400000, guid: 2cd408bea29f40e47afbd07c1eef89d9, type: 2}
+  m_ItemDefinitions:
+  - {fileID: 11400000, guid: 0a55431a6c6df9c499b08cc529dac418, type: 2}
+  - {fileID: 11400000, guid: de8ef3e6ca8ccee4d8e493eb63cd8292, type: 2}
+  - {fileID: 11400000, guid: a1f07dfbc43ebf84d9219201ed904868, type: 2}
+  - {fileID: 11400000, guid: 83e367e654ad256468e54d9070d39d01, type: 2}
+  - {fileID: 11400000, guid: c1ef33f4093437449b945d86f64c9e31, type: 2}
+  - {fileID: 11400000, guid: 25b4b27b2c6f4d24c9864d71aa1ecb11, type: 2}
+  - {fileID: 11400000, guid: 69c682887d2d71a429c3fc637171d818, type: 2}
+  m_Currencies: []
+  m_CraftingRecipes: []
+  m_CraftingCategories:
+  - {fileID: 11400000, guid: db216bf6946ffc54fa61e3e222354e2a, type: 2}

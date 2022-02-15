@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Base;
 #if UNITY_EDITOR
 using UnityEditor;
 using Sirenix.OdinInspector.Editor;
@@ -126,7 +127,7 @@ namespace Base {
             if (newBSaveObject.SaveName.Length <= 3) return false;
             if (newBSaveObject.SaveCluster.Count < 1) return false;
             for (var i = 0; i < newBSaveObject.SaveCluster.Count; i++)
-                if (newBSaveObject.SaveCluster[i].Name.IsVaibleForSave() != B_ExtentionFunctions.SaveNameViabilityStatus.Viable)
+                if (newBSaveObject.SaveCluster[i].Name.IsVaibleForSave() != ExtentionFunctions.SaveNameViabilityStatus.Viable)
                     return false;
             return true;
         }
@@ -140,7 +141,7 @@ namespace Base {
             if (string.IsNullOrEmpty(newBSaveObject.SaveName) || newBSaveObject.SaveName.Length <= 3) return "Enter A Name";
             if (newBSaveObject.SaveCluster.Count < 1) return "Enter Atleast One Data";
             for (var i = 0; i < newBSaveObject.SaveCluster.Count; i++)
-                if (newBSaveObject.SaveCluster[i].Name.IsVaibleForSave() != B_ExtentionFunctions.SaveNameViabilityStatus.Viable)
+                if (newBSaveObject.SaveCluster[i].Name.IsVaibleForSave() != ExtentionFunctions.SaveNameViabilityStatus.Viable)
                     return "Enter Atleast One Data";
             return null;
         }
