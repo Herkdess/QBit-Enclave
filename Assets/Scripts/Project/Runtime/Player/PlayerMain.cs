@@ -20,15 +20,17 @@ public class PlayerMain : RPGSystemUser {
     }
 
     private void Start() {
-        B_CES_CentralEventSystem.BTN_OnStartPressed.AddFunction(SetupModules, false);
+        // B_CES_CentralEventSystem.BTN_OnStartPressed.AddFunction(SetupModules, false);
     }
 
-    void SetupModules() {
+    public void SetupModules() {
         bodyMovement = GetComponent<PlayerBodyMovement>();
         bodyMovement.Init();
+        ActiveVirtualCameras.VirCam1.CameraSetAll(transform);
     }
 
     private void Update() {
+        _previousPosition = transform.position;
         if (Input.GetButton("Fire2")) {
             if (Time.time > nextFire) {
                 nextFire = Time.time + FireRate;
@@ -40,22 +42,31 @@ public class PlayerMain : RPGSystemUser {
 
     private void OnTriggerEnter2D(Collider2D col) {
         
-        if (col.TryGetComponent(out WorldItem item)) {
-            Storage.AddItem(new Item(item.item), 1);
-            Destroy(col.gameObject);
-        }
+
     }
-    
     public void CreateParticleEffect() {
         GameObject particleEffect = Instantiate(Resources.Load<GameObject>("Prefabs/ParticleEffect"), transform.position, Quaternion.identity);
-        //Initialize itemCollectorFire in particleEffect
-        particleEffect.GetComponent<ItemCollectorFire>().Setup(Storage);
-        // particleEffect.transform.DOMove(Camera.main.ScreenToWorldPoint(Input.mousePosition), .5f).OnComplete(() => { Destroy(particleEffect); });
+        
         Vector3 mouseDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         mouseDirection.z = 0;
         mouseDirection.Normalize();
-        particleEffect.transform.DOMove(particleEffect.transform.position + mouseDirection * FireRange * Time.deltaTime, .5f).SetEase(Ease.InFlash).OnComplete(() => { Destroy(particleEffect); });
+        particleEffect.GetComponent<TestFire>().Setup(mouseDirection, GetVelocity());
+        // particleEffect.transform.DOMove(particleEffect.transform.position + mouseDirection * FireRange * Time.deltaTime, .5f).SetEase(Ease.InFlash).OnComplete(() => { Destroy(particleEffect); });
     }
+    
+    //Calculate the velocity of the transform with record of the last two frames
+    Vector3 _previousPosition;
+    private Vector3 CalculateVelocity() {
+        return (transform.position - _previousPosition) / Time.deltaTime;
+    }
+    
+    //Give the float value of the velocity
+    public float GetVelocity() {
+        return CalculateVelocity().magnitude;
+    }
+    
+    
+
 
     protected override void OnDeath() {
         base.OnDeath();
