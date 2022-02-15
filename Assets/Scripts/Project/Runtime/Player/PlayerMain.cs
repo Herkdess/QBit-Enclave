@@ -11,9 +11,8 @@ using UnityEngine;
 public class PlayerMain : RPGSystemUser {
     
     PlayerBodyMovement bodyMovement;
-    private float FireRange = 3000f;
-    private float FireRate = 0.5f;
-    private float nextFire = 0f;
+
+    public List<AbilityBaseClass> Abilities;
 
     public override void Initialize() {
         base.Initialize();
@@ -21,6 +20,7 @@ public class PlayerMain : RPGSystemUser {
 
     private void Start() {
         // B_CES_CentralEventSystem.BTN_OnStartPressed.AddFunction(SetupModules, false);
+        Abilities.ForEach(t => t.SetupAbility(this));
     }
 
     public void SetupModules() {
@@ -30,42 +30,18 @@ public class PlayerMain : RPGSystemUser {
     }
 
     private void Update() {
-        _previousPosition = transform.position;
-        if (Input.GetButton("Fire2")) {
-            if (Time.time > nextFire) {
-                nextFire = Time.time + FireRate;
-                CreateParticleEffect();
-            }
+        foreach (AbilityBaseClass ability in Abilities) {
+            ability.AbilityLifeCycle();
+            ability.UseAbility(true);
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
         
 
     }
-    public void CreateParticleEffect() {
-        GameObject particleEffect = Instantiate(Resources.Load<GameObject>("Prefabs/ParticleEffect"), transform.position, Quaternion.identity);
-        
-        Vector3 mouseDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        mouseDirection.z = 0;
-        mouseDirection.Normalize();
-        particleEffect.GetComponent<TestFire>().Setup(mouseDirection, GetVelocity());
-        // particleEffect.transform.DOMove(particleEffect.transform.position + mouseDirection * FireRange * Time.deltaTime, .5f).SetEase(Ease.InFlash).OnComplete(() => { Destroy(particleEffect); });
-    }
-    
-    //Calculate the velocity of the transform with record of the last two frames
-    Vector3 _previousPosition;
-    private Vector3 CalculateVelocity() {
-        return (transform.position - _previousPosition) / Time.deltaTime;
-    }
-    
-    //Give the float value of the velocity
-    public float GetVelocity() {
-        return CalculateVelocity().magnitude;
-    }
-    
-    
+
+
 
 
     protected override void OnDeath() {
