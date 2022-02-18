@@ -11,6 +11,8 @@ public class MouseData : MonoBehaviour
     Cell currentCell;
 
     public Vector3 MouseDataPosition;
+
+    private Vector3 startPos;
     
 
     private void Update() {
@@ -18,18 +20,37 @@ public class MouseData : MonoBehaviour
         MouseDataPosition.y = 0;
         if (Input.GetMouseButtonDown(0)) {
             currentCell = gridCreator.GetCell(MouseDataPosition);
+            startPos = Input.mousePosition;
         }
-        if (Input.GetMouseButton(0)) {
-            if (currentCell != null) {
-                currentCell.transform.position = MouseDataPosition;
-            }
-        }
+        if(currentCell == null) return;
         if (Input.GetMouseButtonUp(0)) {
+            if (!ColumnOrRow()) {
+                if(startPos.y > Input.mousePosition.y) {
+                    gridCreator.MoveCellMembersInRow(currentCell.row, 1);
+                } else {
+                    gridCreator.MoveCellMembersInRow(currentCell.row, -1);
+                }
+            }
+            else {
+                if(startPos.x > Input.mousePosition.x) {
+                    gridCreator.MoveCellMembersInColumn(currentCell.column, 1);
+                } else {
+                    gridCreator.MoveCellMembersInColumn(currentCell.column, -1);
+                }
+            }
             currentCell = null;
         }
     }
+    
+    float MouseDelta() {
+        return Vector3.Distance(startPos, Input.mousePosition);
+    }
 
-    // Vector3 GetMouseWorldPosition(Vector3 pos) {
-    //     Plane p =  new Plane(Vector3.up, )
-    // }
+    bool ColumnOrRow() {
+        float xDelta = Mathf.Abs(startPos.x - Input.mousePosition.x);
+        float yDelta = Mathf.Abs(startPos.y - Input.mousePosition.y);
+        
+        return xDelta > yDelta;
+    }
+
 }

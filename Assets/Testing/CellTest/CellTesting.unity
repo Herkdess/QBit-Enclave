@@ -285,10 +285,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellPrefab: {fileID: 4877855906358807868, guid: 90baaa1bcef129444b85a1efabf4bd40, type: 3}
+  CellMemberPrefab: {fileID: 1908220926101180329, guid: 86f6c7b7bb5021b4fac70820dd2fe1fc, type: 3}
   SpawnPoint: {fileID: 2060515239}
   GridSize: {x: 5, y: 5}
-  CellSize: 1
-  CellGap: 0
+  CellSize: 2
+  CellGap: 0.1
   StartPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &437763241
 MonoBehaviour:

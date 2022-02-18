@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c65d8f25eb41414697f32b2d7af46dd, type: 3}
   m_Name: PlayerGlobalAbilities
   m_EditorClassIdentifier: 
-  CDR: 0.3
-  Duration: 2
+  CDR: 1
+  Duration: 1
   UserMana: 100
