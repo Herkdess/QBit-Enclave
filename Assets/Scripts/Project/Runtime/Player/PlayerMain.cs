@@ -2,25 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Base;
 using Base.UI;
 using DG.Tweening;
-using Project.Runtime.Player;
 using RPGSystems;
 using UnityEngine;
 public class PlayerMain : RPGSystemUser {
     
     PlayerBodyMovement bodyMovement;
 
-    public List<AbilityBaseClass> Abilities;
-
+    public List<Ability_Base> PassiveAbilities;
+    public List<Ability_Base> ActiveAbilities;
     public override void Initialize() {
         base.Initialize();
     }
 
     private void Start() {
-        // B_CES_CentralEventSystem.BTN_OnStartPressed.AddFunction(SetupModules, false);
-        Abilities.ForEach(t => t.SetupAbility(this));
+        PassiveAbilities.ForEach(t => t.SetupAbility(this));
+        ActiveAbilities.ForEach(t => t.SetupAbility(this));
     }
 
     public void SetupModules() {
@@ -30,10 +30,14 @@ public class PlayerMain : RPGSystemUser {
     }
 
     private void Update() {
-        foreach (AbilityBaseClass ability in Abilities) {
+        foreach (Ability_Base ability in PassiveAbilities) {
             ability.AbilityLifeCycle();
             ability.UseAbility(true);
         }
+        // foreach (Ability_Base ability in ActiveAbilities) {
+        //     ability.AbilityLifeCycle();
+        //     ability.UseAbility(false);
+        // }
     }
 
     private void OnTriggerEnter2D(Collider2D col) {

@@ -5,7 +5,7 @@ using DG.Tweening;
 using UnityEngine;
 
 [System.Serializable]
-public class SphereSpawner {
+public class Ability_Sphere_Cast {
     [Header("Sphere Spawner")]
     [HideInInspector] public MonoBehaviour parent;
 
@@ -61,52 +61,31 @@ public class SphereSpawner {
             go.transform.parent = _rotateTransform.transform;
             _spawnedObjects.Add(go);
         }
+        //Modify the rotation of the _rotateTransform to given direction
+        // _rotateTransform.rotation = Quaternion.Euler();
         ChangeRotateRadius(_originalRotateRadius, 1f);
         Rotate();
         Move();
         StartCountdown();
     }
 
-    public SphereSpawner(SphereSpawner previousSpawner) {
-        this.parent = previousSpawner.parent;
-        this.SpawnObjectPrefab = previousSpawner.SpawnObjectPrefab;
-        this.SpawnCount = previousSpawner.SpawnCount;
-        this.MaxSpawnCount = previousSpawner.MaxSpawnCount;
-        this.MinSpawnCount = previousSpawner.MinSpawnCount;
-        this.SpawnRadius = previousSpawner.SpawnRadius;
-        this.RotateRadius = previousSpawner.RotateRadius;
-        this.SpawnHeight = previousSpawner.SpawnHeight;
-        this.RotateHeight = previousSpawner.RotateHeight;
-        this.MaxRotateSpeed = previousSpawner.MaxRotateSpeed;
-        this.MinRotateSpeed = previousSpawner.MinRotateSpeed;
-        this.RotateSpeed = previousSpawner.RotateSpeed;
-        this.RotateAxis = previousSpawner.RotateAxis;
+    public Ability_Sphere_Cast(Ability_Sphere_Cast previousCast) {
+        this.parent = previousCast.parent;
+        this.SpawnObjectPrefab = previousCast.SpawnObjectPrefab;
+        this.SpawnCount = previousCast.SpawnCount;
+        this.MaxSpawnCount = previousCast.MaxSpawnCount;
+        this.MinSpawnCount = previousCast.MinSpawnCount;
+        this.SpawnRadius = previousCast.SpawnRadius;
+        this.RotateRadius = previousCast.RotateRadius;
+        this.SpawnHeight = previousCast.SpawnHeight;
+        this.RotateHeight = previousCast.RotateHeight;
+        this.MaxRotateSpeed = previousCast.MaxRotateSpeed;
+        this.MinRotateSpeed = previousCast.MinRotateSpeed;
+        this.RotateSpeed = previousCast.RotateSpeed;
+        this.RotateAxis = previousCast.RotateAxis;
     }
 
-    public SphereSpawner() { }
-
-    // public void IncreaseAmount(int by) {
-    //     if (SpawnCount + by > MaxSpawnCount) {
-    //         SpawnCount = MaxSpawnCount;
-    //         return;
-    //     }
-    //     Clear();
-    //     SpawnCount += by;
-    //     SpawnSphere(Duration);
-    // }
-    //
-    // public void DecreaseAmount(int by) {
-    //     if (SpawnCount <= MinSpawnCount) return;
-    //     if (SpawnCount - by <= MinSpawnCount) {
-    //         SpawnCount = MinSpawnCount;
-    //         _shrinkTween?.Kill();
-    //         _shrinkTween = ChangeRotateRadius(0, 1f).OnComplete(Clear);
-    //         return;
-    //     }
-    //     Clear();
-    //     SpawnCount -= by;
-    //     SpawnSphere(Duration);
-    // }
+    public Ability_Sphere_Cast() { }
 
     public void Shrink() {
         _originalRotateRadius = RotateRadius;

@@ -66,7 +66,7 @@ TextureImporter:
       213: -4098687814978177209
     second: ShapesGridIcons_10
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -86,6 +86,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -94,12 +96,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -117,9 +119,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -389,6 +395,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      FireWandShapesGrid: 3840771527017675400
+      FlagShapeGrid: 4606030268943808352
+      IronSwordShapesGrid: 6783638386368323294
+      WoodenSwordShapesGrid: -6593128376952368525
+      IceWandShapesGrid: -1870823209822195482
+      BigPotionShapesGrid: -366886572434737777
+      GateKeyShapesGrid: -669017754953906100
+      ChestKeyShapesGrid: 8471373266988744422
+      PotionShapesGrid: -6009542358663816143
+      WizardWandShapesGrid: 481594050949914359
+      GreatSwordShapesGrid: -1826962826682295106
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

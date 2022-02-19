@@ -237,7 +237,7 @@ TextureImporter:
       213: 3425014876571629422
     second: Default
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -257,6 +257,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -266,11 +268,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -288,9 +290,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -440,7 +446,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a8be9ad8396a3914da0ca7cf8f3bb9df
-      internalID: 4773600122041589604
+      internalID: -5844140084100791493
       vertices: []
       indices: 
       edges: []
@@ -524,7 +530,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0b5902b69269b9f43ae52fd51bdbeac8
-      internalID: 4773600122041589604
+      internalID: -4737278654489891904
       vertices: []
       indices: 
       edges: []
@@ -545,7 +551,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4a4d4bb1dce2aaf499182361d24dadcc
-      internalID: -4789670105439411607
+      internalID: 6430733190537296231
       vertices: []
       indices: 
       edges: []
@@ -755,7 +761,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 87f3b8bec6bfa6b4baa4d92a10b38033
-      internalID: 4773600122041589604
+      internalID: -3735962806158691860
       vertices: []
       indices: 
       edges: []
@@ -860,7 +866,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4a298b74706ea3847a6472fd14b4c1ff
-      internalID: 4773600122041589604
+      internalID: -1364392504315616472
       vertices: []
       indices: 
       edges: []
@@ -1127,6 +1133,45 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      MenuSquare: -4280036866122168274
+      KeyItem: -5750989916427777856
+      MenuLightSquare: 6126559862405708981
+      MenuLight: -1618998768854616672
+      Empty: 4773600122041589604
+      ConstantBoost: -4132731714408692042
+      ArrowSmall: 6010851801244026207
+      Heal: -1364392504315616472
+      Arrow: 7034423813313189624
+      Attack: -2130292641307725112
+      Menu: 3288530524387831973
+      ArrowAttribute: -2722212501383410460
+      Material: -1989100132555051953
+      MenuBorder: 8506905823469378891
+      SilverCoin: 7756397802090134975
+      HeaderLine: -3385805023499867733
+      PageIcon: 6090281624176440195
+      Weapons: 8685821154562324033
+      BronzeCoin: 141271680697106295
+      Line: -1647121969699353306
+      FilledEquippedSelected: -8417962246831464302
+      FilledEqupped: 2011003698090158011
+      Defense: 1794602189325827313
+      Filled: 7061801754131594114
+      EmptySelected: -4789670105439411607
+      HPSliderBackground: -4737278654489891904
+      Consumable: -3735962806158691860
+      GoldCoin: -5507597522864043989
+      HPSlider: 6430733190537296231
+      MultiplierBoost: -8904264923756732896
+      FilledSelected: -7377819553374844296
+      MenuBackground: -1438998196163135441
+      Default: 3425014876571629422
+      Armor: 6094746334361814630
+      MenuInsideBorder: -5844140084100791493
+      AttributeBackground: -4118346828941794905
+      MenuLightOpaque: 4351918349796644042
+      ArrowOpaque: -2929819562212356833
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

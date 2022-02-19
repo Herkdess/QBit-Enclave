@@ -1,7 +1,6 @@
 ﻿using System;
 using Base;
 using DG.Tweening;
-using Project.Runtime.Player;
 using UnityEngine;
 public class PlayerBodyMovement : MonoBehaviour {
 

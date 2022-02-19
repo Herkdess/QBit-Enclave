@@ -87,7 +87,7 @@ TextureImporter:
       213: -1647121969699353306
     second: CharacterSilhouette
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -107,6 +107,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -116,11 +118,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 1
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -138,9 +140,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -206,7 +212,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 97bfb13916979a100800000000000000
-      internalID: 119760325088902009
+      internalID: -8098369093108455766
       vertices: []
       indices: 
       edges: []
@@ -683,6 +689,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ItemViewSlotEquipped: 6010851801244026207
+      FloatHeaderTopper: 7061801754131594114
+      ActionButton: 6126559862405708981
+      Arrow: 4351918349796644042
+      CircleButton: -59168372855531656
+      PanelBackground: -8098369093108455766
+      InventoryIcon: -7377819553374844296
+      SliderBackground: 1908758866525187115
+      EquipmentIcon: -638443171332479689
+      SubPanel: 8718025911094459244
+      ItemViewSlot: -260526655131594533
+      ActionButtonSelected: -8417962246831464302
+      AtrributeBackground: -2722212501383410460
+      DisabledButton: -4280036866122168274
+      FloatPanelHeader: 5287010466625477723
+      ItemViewSlotSelectedEquipped: -4789670105439411607
+      DisabledButtonSelected: -2336786869546493214
+      MainMenuIcon: -1428572451713796752
+      PanelHeader: 4773600122041589604
+      CloseIcon: 7411919347176863388
+      ItemViewSlotSelected: -2929819562212356833
+      CharacterSilhouette: -1647121969699353306
+      SliderHandler: -4914549223856237382
+      ScallopBorder: -1618998768854616672
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

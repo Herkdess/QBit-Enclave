@@ -287,10 +287,10 @@ MonoBehaviour:
   CellPrefab: {fileID: 4877855906358807868, guid: 90baaa1bcef129444b85a1efabf4bd40, type: 3}
   CellMemberPrefab: {fileID: 1908220926101180329, guid: 86f6c7b7bb5021b4fac70820dd2fe1fc, type: 3}
   SpawnPoint: {fileID: 2060515239}
-  GridSize: {x: 5, y: 5}
-  CellSize: 2
+  GridSize: {x: 9, y: 5}
+  CellSize: 1.86
   CellGap: 0.1
-  StartPosition: {x: 0, y: 0, z: 0}
+  StartPosition: {x: -5.8, y: 0, z: -1.76}
 --- !u!114 &437763241
 MonoBehaviour:
   m_ObjectHideFlags: 0

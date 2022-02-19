@@ -201,7 +201,7 @@ TextureImporter:
       213: 1523967812556172833
     second: Default
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -221,6 +221,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -229,12 +231,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -252,9 +254,13 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -1616,6 +1622,70 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Bomb: 1161201145128540330
+      HealWeedEditor: 7374845061861626600
+      KnightBootsEditor: -2319476694228375547
+      IceWand: 4898279777408357969
+      Water: -7077578495685720143
+      TitaniumIngotEditor: 3434086634727231013
+      HoodEditor: -8500527092579243807
+      KnightBoots: -7229608253006519833
+      TitaniumIngot: 8345930617266499907
+      IronSwordEditor: 5543941588292853863
+      ChestKeyEditor: -5330826594950682575
+      IronSword: -3506578260146713839
+      ItemPickup: -3893717425429842643
+      KnightArmor: -4054265735571910013
+      SurpriseBoxEditor: 1341854236672496375
+      TitaniumNugget: 7312263738639888589
+      Shop: 184950751378207249
+      LeatherBootsEditor: -3917391801751258802
+      Default: 1523967812556172833
+      WaterEditor: 3052315535316524931
+      BigPotionEditor: 7576617242518483205
+      WoodenSwordEditor: 5681967267464321869
+      KnightHelmetEditor: 9151725625850188775
+      BigPotion: -497348988525880989
+      LeatherBoots: 3337963993109448469
+      UpgradeStable: -4380630915542050537
+      ChestKey: -5939463070795172742
+      WoodEditor: 2514988542215765323
+      PotionEditor: -1863859237976802683
+      DoomRuneEditor: -168777754515822616
+      IceWandEditor: -9205221584584489300
+      KnightArmorEditor: -7539582390867499684
+      BoostRuneEditor: -3862903190024489479
+      GateKey: 2130535880278150251
+      AmazingRune: 1715166595077448622
+      BigBombEditor: 3220665290143086019
+      GateKeyEditor: -4737426781762327817
+      WizardWandEditor: -1772244045117237821
+      MagicPowderEditor: -8179040606652740800
+      WoodenSword: 1773760789012069315
+      TitaniumNuggetEditor: -6931339683150358059
+      FireWand: 7142863711473745998
+      CraftStable: 1202984965197363600
+      ItemPickupEditor: -7058561907366660472
+      GreatSwordEditor: 3366042427789280657
+      BigBomb: 3901238138619246455
+      WizardWand: -7836578388698924565
+      FireWandEditor: 2486193441875991756
+      HealWeed: 7725067544912203539
+      Wood: 4126004077657876305
+      Hood: -4098449895975160213
+      Potion: -1888774750914703165
+      AmazingRuneEditor: -8930018218856646630
+      LeatherArmorEditor: 165230769311009543
+      MagicalPowder: -589163328377730442
+      LeatherArmor: -7896407437694424259
+      DoomRune: -5364779239713073113
+      GreatSword: -7531558038391537600
+      StorageHouse: 6725019411808010661
+      KnightHelmet: -1291386481232344510
+      SurpriseBox: -3121388548482222669
+      BombEditor: -7899933087549869777
+      BoostRune: -1136126727229509422
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
