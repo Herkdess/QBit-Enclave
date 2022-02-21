@@ -89,5 +89,13 @@ namespace Base {
             yield return new WaitForSeconds(waitTime);
             method?.Invoke();
         }
+        
+        public Coroutine StopCoroutine(Coroutine coroutine) {
+            if (coroutine != null) {
+                _owner.StopCoroutine(coroutine);
+                coroutine = null;
+            }
+            return null;
+        }
     }
 }

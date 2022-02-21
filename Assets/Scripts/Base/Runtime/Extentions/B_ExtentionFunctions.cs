@@ -423,6 +423,10 @@ namespace Base {
         public static Coroutine RunWithDelay(Action method, float delay) {
             return B_CoroutineControl.Queue.RunFunctionWithDelay(method, delay);
         }
+        
+        public static Coroutine StopCoroutine(this Coroutine coroutine) {
+            return B_CoroutineControl.Queue.StopCoroutine(coroutine);
+        }
 
         #endregion
 

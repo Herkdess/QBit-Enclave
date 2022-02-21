@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Base.SoundManagement;
 using Base.UI;
 using Sirenix.OdinInspector;
 namespace Base {
@@ -23,6 +24,10 @@ namespace Base {
         [TabGroup("Camera Manager")]
         [HideLabel]
         public CameraFunctions CameraFunctions;
+        [TabGroup("Audio Manager")]
+        [HideLabel]
+        public SoundManager AudioFunctions;
+        
         #endregion
 
         public Task SetupBridge(BaseEngine bootLoader) {
@@ -32,6 +37,7 @@ namespace Base {
             B_GameControl.Setup(gameManagerFunctions);
             B_LevelControl.Setup(levelManagerFunctions);
             B_CameraControl.Setup(CameraFunctions);
+            SoundControl.Setup(AudioFunctions);
 
             return Task.CompletedTask;
         }
