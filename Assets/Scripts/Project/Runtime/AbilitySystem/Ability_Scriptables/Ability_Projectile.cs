@@ -10,8 +10,6 @@ namespace RPGSystems.Abilities  {
         public float ProjectileSpeed = 10f;
         protected float _projectileSpeed => (ProjectileSpeed + Stats.ProjectileSpeedAddition) * Stats.ProjectileSpeedMulti;
         public float ProjectileLifeTime = 5f;
-        protected float _projectileLifeTime => (ProjectileLifeTime + Stats.AbilityLifetimeAddition) * Stats.AbilityLifetimeMulti;
-
     }
     
     

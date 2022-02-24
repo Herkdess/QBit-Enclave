@@ -26,6 +26,18 @@ MonoBehaviour:
     Volume: 0.506
     Pitch: 1
     PullName: 1
+  - SoundName: Pickup_sfx_2
+    SoundClip: {fileID: 8300000, guid: a03fbe279c9576640b1c08ef134a19c4, type: 3}
+    Source: {fileID: 0}
+    Volume: 1
+    Pitch: 1
+    PullName: 1
+  - SoundName: SwordSlash_sfx_3
+    SoundClip: {fileID: 8300000, guid: e9892b385b28d3b4dacb944ef62a5331, type: 3}
+    Source: {fileID: 0}
+    Volume: 1
+    Pitch: 1
+    PullName: 1
   SaveInfo:
     obj: {fileID: 11400000}
     foldername: Saves/Sounds

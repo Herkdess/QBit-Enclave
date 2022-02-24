@@ -1,1 +1,1 @@
-public enum Enum_MainMusicCollection{ Kavinsky_Nightcall_sfx_0, Explosion_sfx_1}
+public enum Enum_MainMusicCollection{ Kavinsky_Nightcall_sfx_0, Explosion_sfx_1, Pickup_sfx_2, SwordSlash_sfx_3}

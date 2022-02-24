@@ -38,7 +38,7 @@ namespace RPGSystems.Abilities  {
             Cast.Duration = _abilityDuration;
             Cast.SpawnCount = _projectileCount;
             Cast.RotateSpeed = _projectileSpeed;
-            Cast.SpawnRadius = _abilityRange;
+            Cast.RotateRadius = _abilityRange;
         }
     }
 }

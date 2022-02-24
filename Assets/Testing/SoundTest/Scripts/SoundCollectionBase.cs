@@ -75,11 +75,12 @@ public class Sound {
     public bool PullName;
     
     Coroutine _playCoroutine;
-
+    
     public bool isPlaying { get; private set; }
     public bool isLooping { get; private set; }
     public bool isLocked { get; private set; }
-
+    public bool isStopGiven { get; private set; }
+    
     public Sound(AudioClip clip, float volume, float pitch) {
         SoundClip = clip;
         Volume = volume;
@@ -95,8 +96,17 @@ public class Sound {
 
     public Sound StopSound() {
         if(isLocked) return this;
+        isStopGiven = true;
+        // CancelOrder();
+        // Source.Stop();
+        return this;
+    }
+    
+    public Sound StopSoundImmediately() {
+        if(isLocked) return this;
         CancelOrder();
         Source.Stop();
+        Source.time = 0;
         return this;
     }
 
@@ -219,6 +229,11 @@ public class Sound {
         for (int i = 0; i < Loop; i++) {
             Source.Play();
             yield return new WaitForSeconds(SoundClip.length + delayBetween);
+            if (isStopGiven) {
+                isStopGiven = false;
+                StopSoundImmediately();
+                break;
+            }
         }
         isPlaying = false;
         isLooping = false;
@@ -230,6 +245,11 @@ public class Sound {
         while (true) {
             Source.Play();
             yield return new WaitForSeconds(SoundClip.length + delayBetween);
+            if (isStopGiven) {
+                isStopGiven = false;
+                StopSoundImmediately();
+                break;
+            }
         }
     }
 

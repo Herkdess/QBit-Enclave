@@ -23,8 +23,6 @@ MonoBehaviour:
   ProjectileCountAddition: 0
   ProjectileSpeedMulti: 1
   ProjectileSpeedAddition: 0
-  AbilityLifetimeMulti: 1
-  AbilityLifetimeAddition: 0
   AbilityDamageMulti: 1
   AbilityDamageAddition: 0
   AbilityRangeMulti: 1
