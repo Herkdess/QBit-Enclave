@@ -88,7 +88,7 @@ namespace RPGSystems {
         /// </summary>
         protected virtual void AbilityLifeCycleEnd() {
             IsActive = false;
-            Debug.Log($"{AbilityName} is Ended");
+            // Debug.Log($"{AbilityName} is Ended");
         }
     }
 }

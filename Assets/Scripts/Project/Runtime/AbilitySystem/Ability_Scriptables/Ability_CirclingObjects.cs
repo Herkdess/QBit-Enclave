@@ -11,6 +11,8 @@ namespace RPGSystems.Abilities  {
 
         public override void SetupAbility(MonoBehaviour user) {
             base.SetupAbility(user);
+            // Cast.parent = user;
+            // Cast.Initialize(user);
             Cast.parent = user;
         }
 
@@ -23,7 +25,6 @@ namespace RPGSystems.Abilities  {
             base.UseAbility();
             newSpawn = new Ability_Sphere_Cast(Cast);
             newSpawn.SpawnSphere(_abilityDuration);
-            Debug.Log("Used Ability");
         }
 
         public override void AbilityLifeCycle() {
@@ -38,7 +39,9 @@ namespace RPGSystems.Abilities  {
             Cast.Duration = _abilityDuration;
             Cast.SpawnCount = _projectileCount;
             Cast.RotateSpeed = _projectileSpeed;
-            Cast.RotateRadius = _abilityRange;
+            Cast.SpawnRadius = _abilityRange;
+            // Cast.RotateData.RotateSpeed = _projectileSpeed;
+            // Cast.RotateData.RotateRadius = _abilityRange;
         }
     }
 }
