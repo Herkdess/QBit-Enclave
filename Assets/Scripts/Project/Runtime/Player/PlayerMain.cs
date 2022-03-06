@@ -7,13 +7,14 @@ using Base;
 using Base.UI;
 using DG.Tweening;
 using RPGSystems;
+using RPGSystems.Abilities;
 using UnityEngine;
 public class PlayerMain : RPGSystemUser {
     
     PlayerBodyMovement bodyMovement;
 
-    public List<Ability_Base> PassiveAbilities;
-    public List<Ability_Base> ActiveAbilities;
+    public List<Ability_Definition> PassiveAbilities;
+    public List<Ability_Definition> ActiveAbilities;
     public override void Initialize() {
         base.Initialize();
     }
@@ -30,14 +31,14 @@ public class PlayerMain : RPGSystemUser {
     }
 
     private void Update() {
-        foreach (Ability_Base ability in PassiveAbilities) {
+        foreach (Ability_Definition ability in PassiveAbilities) {
             ability.AbilityLifeCycle();
-            ability.UseAbility(true);
+            // ability.UseAbility(true);
         }
-        // foreach (Ability_Base ability in ActiveAbilities) {
-        //     ability.AbilityLifeCycle();
-        //     ability.UseAbility(false);
-        // }
+        foreach (Ability_Definition ability in ActiveAbilities) {
+            ability.AbilityLifeCycle();
+            // ability.UseAbility(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col) {

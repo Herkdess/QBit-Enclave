@@ -43,40 +43,46 @@ namespace RPGSystems {
         public float CDRAdd = 0;
         [BoxGroup("$playerAttributesTabName/$abilitiesType/$abilitiesBoxName", false)]
         [Header("Duration")]
-        [Range(.5f, 10)]
+        [Range(.1f, 10)]
         public float DurationMulti = 1;
         [BoxGroup("$playerAttributesTabName/$abilitiesType/$abilitiesBoxName", false)]
         [Range(0, 50f)]
         public float DurationAdd = 0;
         [BoxGroup("$playerAttributesTabName/$abilitiesType/$abilitiesBoxName", false)]
         [Header("Projectile Count")]
-        [Range(0, 5)]
+        [Range(0.1f, 5)]
         public int ProjectileCountMulti = 1;
         [BoxGroup("$playerAttributesTabName/$abilitiesType/$abilitiesBoxName", false)]
         [Range(0, 100)]
         public int ProjectileCountAddition = 0;
         [BoxGroup("$playerAttributesTabName/$abilitiesType/$abilitiesBoxName", false)]
         [Header("Projectile Speed")]
-        [Range(0, 5)]
+        [Range(0.1f, 5)]
         public float ProjectileSpeedMulti = 1;
         [BoxGroup("$playerAttributesTabName/$abilitiesType/$abilitiesBoxName", false)]
-        [Range(0, 100)]
+        [Range(0.1f, 100)]
         public float ProjectileSpeedAddition = 0;
         [BoxGroup("$playerAttributesTabName/$abilitiesType/$abilitiesBoxName", false)]
         [Header("Projectile Damage")]
-        [Range(0, 5)]
+        [Range(0.1f, 5)]
         public float AbilityDamageMulti = 1;
         [BoxGroup("$playerAttributesTabName/$abilitiesType/$abilitiesBoxName", false)]
         [Range(0, 100)]
         public float AbilityDamageAddition = 0;
         [BoxGroup("$playerAttributesTabName/$abilitiesType/$abilitiesBoxName", false)]
         [Header("Projectile Range")]
-        [Range(0, 5)]
-        public float AbilityRangeMulti = 1;
+        [Range(0.1f, 5)]
+        public float AbilityOrbitRangeMulti = 1;
         [BoxGroup("$playerAttributesTabName/$abilitiesType/$abilitiesBoxName", false)]
         [Range(0, 100)]
-        public float AbilityRangeAddition = 0;
-
+        public float AbilityOrbitRangeAddition = 0;
+        [BoxGroup("$playerAttributesTabName/$abilitiesType/$abilitiesBoxName", false)]
+        [Range(0.1f, 5)]
+        public float AbilityDamageRangeMulti = 1;
+        [BoxGroup("$playerAttributesTabName/$abilitiesType/$abilitiesBoxName", false)]
+        public float AbilityDamageRangeAddition = 0;
+        
+        
         #endregion
 
         #region Save Management

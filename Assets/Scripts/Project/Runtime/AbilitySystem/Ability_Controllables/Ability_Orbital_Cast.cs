@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using RPGSystems.Abilities;
 using UnityEngine;
 
 [System.Serializable]
-public class Ability_Sphere_Cast {
-    [Header("Sphere Spawner")]
+public class Ability_Orbital_Cast : Ability_Projectile_Cast {
+    [Header("Orbital Cast")]
     [HideInInspector] public MonoBehaviour parent;
 
     [Header("Rotation")]
@@ -22,11 +23,7 @@ public class Ability_Sphere_Cast {
     public float RotateSpeed = 90;
     public Vector3 RotateAxis = new Vector3(0, 0, 1);
     Transform _rotateTransform;
-    [Header("Spawn Control")]
-    public GameObject SpawnObjectPrefab;
-    public int SpawnCount = 10;
-    public int MaxSpawnCount = 50;
-    public int MinSpawnCount = 1;
+
 
     private Tween _rotateTween;
     private Tween _heightTween;
@@ -44,7 +41,7 @@ public class Ability_Sphere_Cast {
 
     private bool Ended;
 
-    public void SpawnSphere(float duration) {
+    public void SpawnOrbitter(float duration) {
         this.Duration = duration;
         _rotateTransform = new GameObject("Rotate Transform").transform;
         _rotateTransform.SetParent(parent.transform);
@@ -61,15 +58,13 @@ public class Ability_Sphere_Cast {
             go.transform.parent = _rotateTransform.transform;
             _spawnedObjects.Add(go);
         }
-        //Modify the rotation of the _rotateTransform to given direction
-        // _rotateTransform.rotation = Quaternion.Euler();
         ChangeRotateRadius(_originalRotateRadius, 1f);
         Rotate();
         Move();
         StartCountdown();
     }
 
-    public Ability_Sphere_Cast(Ability_Sphere_Cast previousCast) {
+    public Ability_Orbital_Cast(Ability_Orbital_Cast previousCast) {
         this.parent = previousCast.parent;
         this.SpawnObjectPrefab = previousCast.SpawnObjectPrefab;
         this.SpawnCount = previousCast.SpawnCount;
@@ -85,7 +80,7 @@ public class Ability_Sphere_Cast {
         this.RotateAxis = previousCast.RotateAxis;
     }
 
-    public Ability_Sphere_Cast() { }
+    public Ability_Orbital_Cast() { }
 
     public void Shrink() {
         _originalRotateRadius = RotateRadius;

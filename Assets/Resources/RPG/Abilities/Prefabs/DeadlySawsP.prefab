@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 987895454552279472}
   - component: {fileID: 987895454552279475}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: DeadlySawsP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

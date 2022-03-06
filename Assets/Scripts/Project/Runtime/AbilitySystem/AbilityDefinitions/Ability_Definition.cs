@@ -1,12 +1,17 @@
 ﻿using System.Threading.Tasks;
+using Sirenix.OdinInspector;
 using UnityEngine;
-namespace RPGSystems {
-    public abstract class Ability_Base : ScriptableObject {
+namespace RPGSystems.Abilities {
+    public abstract class Ability_Definition : ScriptableObject {
 
         [Header("Ability Base Info")]
         public Ability_GlobalStats Stats;
         public string AbilityName;
-        
+
+        public bool AutoCast;
+        [HideIf("@AutoCast")]
+        public KeyCode AbilityKey = KeyCode.Mouse0;
+        private bool keyPressed = false;
         public float AbilityDamage;
         protected float _abilityDamage => (AbilityDamage + Stats.AbilityDamageAddition) * Stats.AbilityDamageMulti;
         
@@ -18,8 +23,11 @@ namespace RPGSystems {
         protected float _abilityDuration => (AbilityDuration + Stats.DurationAdd) * Stats.DurationMulti;
         [HideInInspector] public float CurrentAbilityDuration;
 
-        public float AbilityRange;
-        protected float _abilityRange => (AbilityRange + Stats.AbilityRangeAddition) * Stats.AbilityRangeMulti;
+        public float AbilityOrbitRange;
+        protected float _abilityOrbitRange => (AbilityOrbitRange + Stats.AbilityOrbitRangeAddition) * Stats.AbilityOrbitRangeMulti;
+
+        public float AbilityDamageRange;
+        protected float _abilityDamageRange => (AbilityDamageRange + Stats.AbilityOrbitRangeAddition) * Stats.AbilityOrbitRangeMulti;
         
         public float AbilityCost;
 
@@ -69,11 +77,28 @@ namespace RPGSystems {
         public virtual void AbilityLifeCycle() {
             if (IsOnCooldown) {
                 AbilityCooldownCountdown -= Time.deltaTime;
+                if (AbilityCooldownCountdown <= .2f && Input.GetKeyDown(AbilityKey)) {
+                    keyPressed = true;
+                }
                 if (AbilityCooldownCountdown <= 0) {
                     IsOnCooldown = false;
                     AbilityCooldownCountdown = _abilityCooldown;
                 }
             }
+            
+            if (AutoCast) {
+                UseAbility(false);
+            }
+            if(!AutoCast && Input.GetKeyDown(AbilityKey)) {
+                keyPressed = true;
+                // Debug.Log("Ability key pressed");
+            }
+            if(keyPressed) {
+                Debug.Log("Press ability used");
+                keyPressed = false;
+                UseAbility(false);
+            }
+            
             if (!IsActive) return;
             if (CurrentAbilityDuration > 0) {
                 CurrentAbilityDuration -= Time.deltaTime;
@@ -81,6 +106,8 @@ namespace RPGSystems {
                     AbilityLifeCycleEnd();
                 }
             }
+            
+
         }
 
         /// <summary>

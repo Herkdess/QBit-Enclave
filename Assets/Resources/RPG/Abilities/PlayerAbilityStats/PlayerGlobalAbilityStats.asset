@@ -19,11 +19,13 @@ MonoBehaviour:
   CDRAdd: 0
   DurationMulti: 1
   DurationAdd: 0
-  ProjectileCountMulti: 1
+  ProjectileCountMulti: 5
   ProjectileCountAddition: 0
   ProjectileSpeedMulti: 1
-  ProjectileSpeedAddition: 0
+  ProjectileSpeedAddition: 0.1
   AbilityDamageMulti: 1
   AbilityDamageAddition: 0
-  AbilityRangeMulti: 1
-  AbilityRangeAddition: 0
+  AbilityOrbitRangeMulti: 1
+  AbilityOrbitRangeAddition: 0
+  AbilityDamageRangeMulti: 1
+  AbilityDamageRangeAddition: 0

@@ -2,17 +2,15 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 namespace RPGSystems.Abilities  {
-    [CreateAssetMenu(fileName = "Projectile Ability", menuName = "RPG/Ability/Circling Objects")]
-    public class Ability_CirclingObjects : Ability_Projectile {
+    [CreateAssetMenu(fileName = "Projectile Ability", menuName = "RPG/Ability/Projectile_Orbiting")] 
+    public class Ability_Projectile_Orbiting : Ability_Projectile {
         [HideLabel]
-        public Ability_Sphere_Cast Cast;
-        private List<Ability_Sphere_Cast> _spawners = new List<Ability_Sphere_Cast>();
-        private Ability_Sphere_Cast newSpawn;
+        public Ability_Orbital_Cast Cast;
+        private List<Ability_Orbital_Cast> _spawners = new List<Ability_Orbital_Cast>();
+        private Ability_Orbital_Cast newSpawn;
 
         public override void SetupAbility(MonoBehaviour user) {
             base.SetupAbility(user);
-            // Cast.parent = user;
-            // Cast.Initialize(user);
             Cast.parent = user;
         }
 
@@ -23,8 +21,8 @@ namespace RPGSystems.Abilities  {
         protected override void UseAbility() {
             ModifyOriginalSpawner();
             base.UseAbility();
-            newSpawn = new Ability_Sphere_Cast(Cast);
-            newSpawn.SpawnSphere(_abilityDuration);
+            newSpawn = new Ability_Orbital_Cast(Cast);
+            newSpawn.SpawnOrbitter(_abilityDuration);
         }
 
         public override void AbilityLifeCycle() {
@@ -39,9 +37,7 @@ namespace RPGSystems.Abilities  {
             Cast.Duration = _abilityDuration;
             Cast.SpawnCount = _projectileCount;
             Cast.RotateSpeed = _projectileSpeed;
-            Cast.SpawnRadius = _abilityRange;
-            // Cast.RotateData.RotateSpeed = _projectileSpeed;
-            // Cast.RotateData.RotateRadius = _abilityRange;
+            Cast.RotateRadius = _abilityOrbitRange;
         }
     }
 }

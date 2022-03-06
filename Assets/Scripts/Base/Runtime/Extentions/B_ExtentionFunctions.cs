@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.AccessControl;
 using System.Threading.Tasks;
 using DG.Tweening;
 using JetBrains.Annotations;
@@ -37,6 +38,18 @@ namespace Base {
                 #endif
                 if (Application.isPlaying)
                     GameObject.Destroy(transform.GetChild(i).gameObject);
+            }
+        }
+        
+        public static Coroutine FollowWithoutParent(this Transform target, Transform transform) {
+            return followWithoutParentRoutine(target, transform).RunCoroutine();
+        }
+
+        private static IEnumerator followWithoutParentRoutine(Transform t1, Transform t2) {
+            while (true) {
+                t1.transform.position = t2.transform.position;
+                t1.transform.rotation = t2.transform.rotation;
+                yield return new WaitForEndOfFrame();
             }
         }
 
