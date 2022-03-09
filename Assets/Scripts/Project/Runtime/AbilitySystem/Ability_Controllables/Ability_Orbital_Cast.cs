@@ -1,19 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using RPGSystems.Abilities;
 using UnityEngine;
 
 [System.Serializable]
 public class Ability_Orbital_Cast : Ability_Projectile_Cast {
-    [Header("Orbital Cast")]
-    [HideInInspector] public MonoBehaviour parent;
+
 
     [Header("Rotation")]
-    public float SpawnRadius = 1;
     public float RotateRadius = 10;
-    public float SpawnHeight = 0;
     public float RotateHeight = 0;
     public float MaxRotateSpeed = 360;
     public float MinRotateSpeed = 0;
@@ -41,23 +39,23 @@ public class Ability_Orbital_Cast : Ability_Projectile_Cast {
 
     private bool Ended;
 
+    public override void Setup(MonoBehaviour parent, Projectile_Singular_Data projectileData) {
+        base.Setup(parent, projectileData);
+    }
+    
+
     public void SpawnOrbitter(float duration) {
         this.Duration = duration;
         _rotateTransform = new GameObject("Rotate Transform").transform;
-        _rotateTransform.SetParent(parent.transform);
+        _rotateTransform.SetParent(CastData.parent.transform);
         _rotateTransform.localPosition = Vector3.zero;
         _rotateTransform.localRotation = Quaternion.identity;
         _rotateTransform.localScale = Vector3.one;
         _spawnedObjects = new List<GameObject>();
+        _spawnedObjects = Cast_Projectile(_rotateTransform).ToList();
+        
         _originalRotateRadius = RotateRadius;
         RotateRadius = 1;
-        for (int i = 0; i < SpawnCount; i++) {
-            float angle = i * Mathf.PI * 2 / SpawnCount;
-            Vector3 pos = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0) * SpawnRadius;
-            GameObject go = GameObject.Instantiate(SpawnObjectPrefab, pos, Quaternion.identity);
-            go.transform.parent = _rotateTransform.transform;
-            _spawnedObjects.Add(go);
-        }
         ChangeRotateRadius(_originalRotateRadius, 1f);
         Rotate();
         Move();
@@ -65,14 +63,8 @@ public class Ability_Orbital_Cast : Ability_Projectile_Cast {
     }
 
     public Ability_Orbital_Cast(Ability_Orbital_Cast previousCast) {
-        this.parent = previousCast.parent;
-        this.SpawnObjectPrefab = previousCast.SpawnObjectPrefab;
-        this.SpawnCount = previousCast.SpawnCount;
-        this.MaxSpawnCount = previousCast.MaxSpawnCount;
-        this.MinSpawnCount = previousCast.MinSpawnCount;
-        this.SpawnRadius = previousCast.SpawnRadius;
+        this.CastData = new Projectile_Cast_Data(previousCast.CastData);
         this.RotateRadius = previousCast.RotateRadius;
-        this.SpawnHeight = previousCast.SpawnHeight;
         this.RotateHeight = previousCast.RotateHeight;
         this.MaxRotateSpeed = previousCast.MaxRotateSpeed;
         this.MinRotateSpeed = previousCast.MinRotateSpeed;
@@ -112,9 +104,9 @@ public class Ability_Orbital_Cast : Ability_Projectile_Cast {
 
     public void Rotate() {
         if (_parentRotateRoutine != null) {
-            parent.StopCoroutine(_parentRotateRoutine);
+            CastData.parent.StopCoroutine(_parentRotateRoutine);
         }
-        _parentRotateRoutine = parent.StartCoroutine(RotateCoroutine());
+        _parentRotateRoutine = CastData.parent.StartCoroutine(RotateCoroutine());
     }
 
     IEnumerator RotateCoroutine() {
@@ -129,9 +121,9 @@ public class Ability_Orbital_Cast : Ability_Projectile_Cast {
 
     public void Move() {
         if (_objectsRotateRoutine != null) {
-            parent.StopCoroutine(_objectsRotateRoutine);
+            CastData.parent.StopCoroutine(_objectsRotateRoutine);
         }
-        _objectsRotateRoutine = parent.StartCoroutine(MoveCoroutine());
+        _objectsRotateRoutine = CastData.parent.StartCoroutine(MoveCoroutine());
     }
 
     IEnumerator MoveCoroutine() {
@@ -149,11 +141,11 @@ public class Ability_Orbital_Cast : Ability_Projectile_Cast {
 
     void StartCountdown() {
         if (_countdownRoutine == null) {
-            _countdownRoutine = parent.StartCoroutine(Countdown());
+            _countdownRoutine = CastData.parent.StartCoroutine(Countdown());
             return;
         }
-        parent.StopCoroutine(_countdownRoutine);
-        _countdownRoutine = parent.StartCoroutine(Countdown());
+        CastData.parent.StopCoroutine(_countdownRoutine);
+        _countdownRoutine = CastData.parent.StartCoroutine(Countdown());
 
     }
 
@@ -164,13 +156,13 @@ public class Ability_Orbital_Cast : Ability_Projectile_Cast {
 
     public void StopParentRotation() {
         if (_parentRotateRoutine != null) {
-            parent.StopCoroutine(_parentRotateRoutine);
+            CastData.parent.StopCoroutine(_parentRotateRoutine);
         }
     }
 
     public void StopObjectsRotation() {
         if (_objectsRotateRoutine != null) {
-            parent.StopCoroutine(_objectsRotateRoutine);
+            CastData.parent.StopCoroutine(_objectsRotateRoutine);
         }
     }
 

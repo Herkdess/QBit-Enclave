@@ -11,7 +11,8 @@ namespace RPGSystems.Abilities  {
 
         public override void SetupAbility(MonoBehaviour user) {
             base.SetupAbility(user);
-            Cast.parent = user;
+            Cast.Setup(user, _projectileData);
+            // Cast.parent = user;
         }
 
         public override void UseAbility(bool previous) {
@@ -35,7 +36,8 @@ namespace RPGSystems.Abilities  {
 
         void ModifyOriginalSpawner() {
             Cast.Duration = _abilityDuration;
-            Cast.SpawnCount = _projectileCount;
+            Cast.CastData.SpawnCount = _projectileCount;
+            // Cast.SpawnCount = _projectileCount;
             Cast.RotateSpeed = _projectileSpeed;
             Cast.RotateRadius = _abilityOrbitRange;
         }

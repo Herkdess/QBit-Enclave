@@ -18,9 +18,9 @@ MonoBehaviour:
   AbilityKey: 323
   AbilityDamage: 10
   AbilityCooldown: 10
-  AbilityCooldownCountdown: 2.2324753
+  AbilityCooldownCountdown: 10
   AbilityDuration: 10
-  CurrentAbilityDuration: 4.222876
+  CurrentAbilityDuration: 10
   AbilityOrbitRange: 10
   AbilityDamageRange: 0
   AbilityCost: 0
@@ -30,17 +30,20 @@ MonoBehaviour:
   ProjectileCount: 1
   ProjectileSpeed: 36
   Cast:
-    parent: {fileID: 0}
-    SpawnRadius: 10
+    CastData:
+      parent: {fileID: 0}
+      SpawnObjectPrefab: {fileID: 987895454552279474, guid: bc3efd8040e462d4783a93fa81706b1d, type: 3}
+      SpawnOrientation: {x: 0, y: 0, z: 0}
+      SpawnOffset: {x: 0, y: 0, z: 0}
+      SpawnCount: 0
+      MaxSpawnCount: 0
+      MinSpawnCount: 0
+      SpawnRadius: 0
+      SpawnAngle: 0
     RotateRadius: 10
-    SpawnHeight: 0
     RotateHeight: 0
     MaxRotateSpeed: 360
     MinRotateSpeed: 0
-    RotateSpeed: 90.1
+    RotateSpeed: 36.1
     RotateAxis: {x: 0, y: 0, z: 1}
-    SpawnObjectPrefab: {fileID: 987895454552279474, guid: bc3efd8040e462d4783a93fa81706b1d, type: 3}
-    SpawnCount: 12
-    MaxSpawnCount: 50
-    MinSpawnCount: 1
-    Duration: 5
+    Duration: 10
